@@ -1,44 +1,37 @@
+int sinalPedestre = 0;
+
 void setup()
 {
-  pinMode(6, OUTPUT);
-  pinMode(5, OUTPUT);
+  pinMode(13, OUTPUT);
+  pinMode(12, OUTPUT);
+  pinMode(11, INPUT);
   pinMode(4, OUTPUT);
-  pinMode(3, OUTPUT);
   pinMode(2, OUTPUT);
-  pinMode(1, OUTPUT);
 }
 
-int i = 0;
 void loop()
 {
-  delay(2000);// esperar 2 segundos até que o LED 1 seja aceso
-  digitalWrite(6, HIGH);
-  delay(3000);//LED 6 aceso por 3 segundos
-  digitalWrite(6, LOW);
-  digitalWrite(5, HIGH);
-  delay(3000); 
-  digitalWrite(5, LOW);
-  digitalWrite(4, HIGH);//atribui nível lógico alto ao pino do LED, acendendo-o
-  delay(3000); 
-  digitalWrite(4, LOW);//Atribui nível lógico baixo ao pino do LED, apagando-o
-  digitalWrite(3, HIGH);
-  delay(3000); 
-  digitalWrite(3, LOW);
+  //  Carro Vermelho
+  digitalWrite(11, HIGH);
+  digitalWrite(4, HIGH);
+  delay(5000); //sensor ligado por 5 segundos
+  digitalWrite(4, LOW);
+  delay(700); // Wait for 700 millisecond(s)
+  digitalWrite(11, LOW);
   digitalWrite(2, HIGH);
-  delay(3000); 
+  delay(100); // Wait for 100 millisecond(s)
+  // Carro Verde
+  digitalWrite(13, HIGH);
+  delay(5000); // Wait for 5000 millisecond(s)
+  digitalWrite(13, LOW);
+  delay(100); // Wait for 100 millisecond(s)
+  // Carro Amarelo
+  digitalWrite(12, HIGH);
+  delay(3000); // Wait for 3000 millisecond(s)
+  digitalWrite(12, LOW);
   digitalWrite(2, LOW);
-  digitalWrite(1, HIGH);
-  delay(3000); 
-  digitalWrite(1, LOW);
+  delay(100); // Wait for 100 millisecond(s)
   
-  delay(3000);
-  
-  while(i < 6){
-    digitalWrite(1, HIGH);
-    digitalWrite(2, HIGH);
-    digitalWrite(3, HIGH);
-    digitalWrite(4, HIGH);
-    digitalWrite(5, HIGH);
-    digitalWrite(6, HIGH);    
-	}
+ 
 }
+
