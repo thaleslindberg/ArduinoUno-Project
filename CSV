@@ -1,4 +1,4 @@
-Name,Quantity,Component
+Name, Quantity, Component
 
 "PIEZO1",1," Piezo "
 "U4",1," Arduino Uno R3 "
